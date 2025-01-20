@@ -8,63 +8,62 @@ public class Calculation {
     Menu quit = new Menu();
 
     public void calculateprofit() {
-        String category;
+        String category = "";
         Float cash;
 
-
-        do {
-            System.out.print("Введите категорию или exit для выхода в меню:" );
+        while (!Objects.equals(category, "exit")) {
+            System.out.print("Введите категорию или exit для выхода в меню: " );
             category = input.next();
-            System.out.print("Введите сумму:" );
+            System.out.print("Введите сумму: " );
             cash = Float.valueOf(input.next());
             // float sum+=cash;
             profit.put(category, cash);
             System.out.println(profit);
-        } while (category != "exit");
-        quit.menu();
+        }
+            quit.menu();
     }
 
     public void calculateexpenses() {
-        String category2;
+        String category2 = "";
         Float cash2;
 
-        do {
-            System.out.print("Введите категорию или exit для выхода в меню:" );
+        while (!Objects.equals(category2, "exit")) {
+            System.out.print("Введите категорию или exit для выхода в меню: " );
             category2 = input.next();
-            System.out.print("Введите сумму:" );
+            System.out.print("Введите сумму: " );
             cash2 = Float.valueOf(input.next());
             // float sum2h+=cash2;
             expenses.put(category2, cash2);
             System.out.println(expenses);
-        } while (category2 != "exit");
+        }
         quit.menu();
 
     }
 
     public void budget() {
-        String category3;
+        String category3 = "";
         Float cash3;
-        do {
-            System.out.print("Введите категорию или exit для выхода в меню:" );
+        while (!Objects.equals(category3, "exit")) {
+            System.out.print("Введите категорию или exit для выхода в меню: " );
             category3 = input.next();
-            System.out.print("Введите сумму:" );
+            System.out.print("Введите сумму: " );
             cash3 = Float.valueOf(input.next());
             // float sum2h+=cash2;
             budget.put(category3, cash3);
             System.out.println(budget);
-        } while (category3 != "exit");
+        }
         quit.menu();
     }
     public void budgetshow() {
-        String category4;
-        do {
-            System.out.print("Введите категорию или exit для выхода в меню:");
+        String category4 = "";
+        while (!Objects.equals(category4, "exit")) {
+            System.out.print("Введите категорию или exit для выхода в меню: ");
             category4 = input.nextLine();
             budget.get(category4);
             float rest = budget.get(category4) - expenses.get(category4);
             System.out.printf("%s", category4 + ": %.2f", budget.get(category4));
-            System.out.printf("Оставшийся бюджет: %.2f", rest);
-        } while (category4 != "exit");
+            System.out.printf("Оставшийся бюджет: %.2f ", rest);
+        }
         quit.menu();
     }
 
@@ -74,11 +73,11 @@ public class Calculation {
         for (float f: profit.values()) { // суммируем все категории в единый доход
             sum+=f;
         };
-        System.out.println("Общий доход:" + sum);
+        System.out.println("Общий доход: " + sum);
         for (float i: expenses.values()) { // суммируем все категории в единые расходы
             sum2h+=i;
         };
-        System.out.println("Общие расходы:" + sum2h);
+        System.out.println("Общие расходы: " + sum2h);
     }
 
 }
