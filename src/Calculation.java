@@ -40,7 +40,18 @@ public class Calculation {
     }
 
     public void budget() {
-
+        String category3;
+        Float cash3;
+        do {
+            System.out.print("Введите категорию или exit для выхода в меню:" );
+            category3 = input.next();
+            System.out.print("Введите сумму:" );
+            cash3 = Float.valueOf(input.next());
+            // float sum2h+=cash2;
+            budget.put(category3, cash3);
+            budget.
+        } while (category3 != "exit");
+        quit.menu();
     }
 
     public void show() {
@@ -54,5 +65,6 @@ public class Calculation {
             sum2h+=i;
         };
         System.out.println("Общие расходы:" + sum2h);
+
     }
 }

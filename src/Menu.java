@@ -22,6 +22,10 @@ public class Menu {
                 break;
             case "3":
                 b.calculateexpenses();
+            case "4":
+                b.budget();
+            case "5":
+                b.show();
             default:
                 throw new IllegalStateException("Unexpected value: " + choose);
         }
