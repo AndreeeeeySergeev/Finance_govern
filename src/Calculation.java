@@ -19,6 +19,7 @@ public class Calculation {
             cash = Float.valueOf(input.next());
             // float sum+=cash;
             profit.put(category, cash);
+            System.out.println(profit);
         } while (category != "exit");
         quit.menu();
     }
@@ -34,6 +35,7 @@ public class Calculation {
             cash2 = Float.valueOf(input.next());
             // float sum2h+=cash2;
             expenses.put(category2, cash2);
+            System.out.println(expenses);
         } while (category2 != "exit");
         quit.menu();
 
@@ -49,8 +51,20 @@ public class Calculation {
             cash3 = Float.valueOf(input.next());
             // float sum2h+=cash2;
             budget.put(category3, cash3);
-            budget.
+            System.out.println(budget);
         } while (category3 != "exit");
+        quit.menu();
+    }
+    public void budgetshow() {
+        String category4;
+        do {
+            System.out.print("Введите категорию или exit для выхода в меню:");
+            category4 = input.nextLine();
+            budget.get(category4);
+            float rest = budget.get(category4) - expenses.get(category4);
+            System.out.printf("%s", category4 + ": %.2f", budget.get(category4));
+            System.out.printf("Оставшийся бюджет: %.2f", rest);
+        } while (category4 != "exit");
         quit.menu();
     }
 
@@ -65,6 +79,6 @@ public class Calculation {
             sum2h+=i;
         };
         System.out.println("Общие расходы:" + sum2h);
-
     }
+
 }

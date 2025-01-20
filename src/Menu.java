@@ -10,7 +10,9 @@ public class Menu {
                 "2. Посчитать доходы\n" +
                 "3. Посчитать расходы\n" +
                 "4. Установить бюджет\n" +
-                "5. Показать итог ");
+                "5. Показать итог\n" +
+                "6. Посчитать бюджет\n" +
+                "7.Выйти ");
         String choose = input.nextLine();
         switch (choose) {
             case "1":
@@ -26,6 +28,11 @@ public class Menu {
                 b.budget();
             case "5":
                 b.show();
+            case "6":
+                b.budgetshow();
+            case "7":
+                System.out.println("До новых встреч!");
+                break;
             default:
                 throw new IllegalStateException("Unexpected value: " + choose);
         }
