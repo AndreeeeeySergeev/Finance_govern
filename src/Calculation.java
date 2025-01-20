@@ -4,6 +4,8 @@ public class Calculation {
     Scanner input = new Scanner(System.in);
     HashMap <String, Float> profit = new HashMap<>();
     HashMap <String, Float> expenses = new HashMap<>();
+    HashMap <String, Float> budget = new HashMap<>();
+    Menu quit = new Menu();
 
     public void calculateprofit() {
         String category;
@@ -11,13 +13,14 @@ public class Calculation {
 
 
         do {
-            System.out.print("Введите категорию или exit для выхода:" );
+            System.out.print("Введите категорию или exit для выхода в меню:" );
             category = input.next();
             System.out.print("Введите сумму:" );
             cash = Float.valueOf(input.next());
             // float sum+=cash;
             profit.put(category, cash);
         } while (category != "exit");
+        quit.menu();
     }
 
     public void calculateexpenses() {
@@ -25,14 +28,21 @@ public class Calculation {
         Float cash2;
 
         do {
-            System.out.print("Введите категорию или exit для выхода:" );
+            System.out.print("Введите категорию или exit для выхода в меню:" );
             category2 = input.next();
             System.out.print("Введите сумму:" );
             cash2 = Float.valueOf(input.next());
             // float sum2h+=cash2;
             expenses.put(category2, cash2);
         } while (category2 != "exit");
+        quit.menu();
+
     }
+
+    public void budget() {
+
+    }
+
     public void show() {
         Float sum = 0.0f;
         Float sum2h = 0.0f;
